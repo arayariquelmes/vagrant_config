@@ -1,0 +1,9 @@
+#levantar maquina
+vagrant up
+#apagar maquina
+vagrant halt
+#Entrar a la maquina
+vagrant ssh
+
+#Mostrar config ip
+vagrant ssh -c "ip addr show"
