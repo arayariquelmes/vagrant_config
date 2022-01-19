@@ -9,3 +9,5 @@ vagrant ssh
 vagrant ssh -c "ip addr show"
 #destruir maquina
 vagrant destroy
+#Sincronizar carpeta compartida vagrant
+vagrant.exe rsync-auto

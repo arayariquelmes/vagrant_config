@@ -23,7 +23,9 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.100.2"
   #Para modo bridge
   #config.vm.network "public_network", bridge: "Realtek PCIe GbE Family Controller"
-  config.vm.synced_folder "~/Desarrollo", "/home/vagrant/Desarrollo"
+  #config.vm.synced_folder "~/Desarrollo", "/home/vagrant/Desarrollo",type: "rsync", rsync__exclude: ".git/", rsync__args: ["--verbose", "--rsync-path='sudo rsync'", "--archive", "--delete", "-z"]
+  config.vm.synced_folder "~/Desarrollo", "/home/vagrant/Desarrollo",type: "nfs"
+  
   config.vm.provider :parallels do |prl|
     prl.memory = "2048"
   end

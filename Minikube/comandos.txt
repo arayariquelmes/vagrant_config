@@ -1,0 +1,28 @@
+brew uninstall docker
+brew install hyperkit
+brew install docker
+brew install kubectl
+brew install minikube
+minikube config set cpus 6
+minikube config set memory 12g
+
+minikube start --kubernetes-version=v1.19.14 --driver=parallels --container-runtime=docker
+#minikube start --kubernetes-version=v1.19.14 --driver=virtualbox --container-runtime=docker
+#minikube start --kubernetes-version=v1.19.14 --driver=hyperkit --container-runtime=docker
+
+minikube kubectl get nodes
+#Configura entorno docker de minikube en sistema host
+eval $(minikube docker-env)
+
+#para probar
+docker info
+brew install docker-compose
+
+minikube addons enable ingress
+minikube addons enable ingress-dns
+minikube addons enable metallb
+minikube addons configure metallb
+
+brew install docker-credential-helper
+
+minikube mount /Users/sarayar/Desarrollo:/desarrollo
