@@ -7,3 +7,5 @@ vagrant ssh
 
 #Mostrar config ip
 vagrant ssh -c "ip addr show"
+#destruir maquina
+vagrant destroy
